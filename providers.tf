@@ -23,7 +23,7 @@ resource "azurerm_network_interface" "frontend" {
   }
 }
 
-resource "azurerm_linux_virtual_machine" "main" {
+resource "azurerm_linux_virtual_machine" "frontend" {
   name                  = "frontend-vm"
   location              = "Denmark East"
   resource_group_name   = "Test"

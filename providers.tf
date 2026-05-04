@@ -11,7 +11,7 @@ resource "azurerm_public_ip" "frontend" {
   allocation_method   = "Static"
 }
 
-resource "azurerm_network_interface" "main" {
+resource "azurerm_network_interface" "frontend" {
   name                = "frontend-nic"
   location            = "Denmark East"
   resource_group_name = "Test"

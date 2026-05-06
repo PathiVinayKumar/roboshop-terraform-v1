@@ -1,9 +1,3 @@
-# Configure the Microsoft Azure Provider
-
-provider "azurerm" {
-  features {}
-}
-
 resource "azurerm_public_ip" "frontend" {
   name                = "frontend"
   resource_group_name = "Test"
@@ -20,6 +14,7 @@ resource "azurerm_network_interface" "frontend" {
     name                          = "testconfiguration1"
     subnet_id                     = "/subscriptions/9e27705f-e28f-4f14-9137-ef3f4f8924af/resourceGroups/Test/providers/Microsoft.Network/virtualNetworks/Monolith-vnet/subnets/default"
     private_ip_address_allocation = "Dynamic"
+    public_ip_address_id          = azurerm_public_ip.frontend.id
   }
 }
 
